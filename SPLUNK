@@ -82,8 +82,6 @@ strftime(X,Y)
               %z Time zone offset from UTC, in hour and minute: +hhmm or -hhmm. (-0500 for EST) THIS SHIT ALSO ISNT NESSEARY EITHER 
               %s Seconds since 1/1/1970 (1308677092)
 
-
-
     DAYS:
         |--> %d Day of month (leading zeros) (01 to 31)
               %j Day of year (001 to 366)
