@@ -1,0 +1,131 @@
+SPLUNK BASICS
+
+Events:
+    |--> single entry of data and can have one or multiple lines
+          event can be text document, a configuration file, or entire stack trace
+
+          "173.26.34.223 - - [01/ Mar/2021:12:05:27 -0700] “GET /trade/ app?action=logout HTTP/1.1” 200 2953"
+
+Metrics:
+    |--> consists of a timestamp and one or more measurements. It can also contain dimensions
+          Mesurements- a metric name and corresponding numeric value (Prperties)
+          Dimensions- provide additional information about the measurements (characteristics)
+
+          
+Events with the same sourcetypes can come from different sources 
+source=/var/log/messages    (different source of info)
+
+source=UDP:514    (different source of info)
+
+sourcetype=linux_syslog (same sourcetype as linux uses both UDP port:514 for remote logging)
+
+
+Fields:
+    |--> searchable name and value pairings that distinguish one event from another
+
+Tags:
+    |--> a knowledge object that enables you to search for events that contain particular field values. You can assign one or more tags to any field/value combination, including event types, hosts, sources, and source types
+          Knowledge object- (user-defined entity that helps enrich and organize data within the platform)
+                            (allow users to extract meaningful insights from raw data)
+
+          example of a knowledge object- Saved searches, Event types, Tags & field extractions
+
+indexes:
+    |--> data is stored in the “main” index
+
+Reports:
+    |--> set a scheduled report to generate alerts when the results meet particular conditions. Reports can be added to dashboards as dashboard panels
+          Dashboard- (made up of panels that contain modules such as search boxes, fields, and data visualizations.)  usually connected to seaved searches 
+          Alerts- ( triggered when search results meet specific conditions)
+
+
+SYSTEM COMPONENTS:
+
+forwarders:
+    |--> Splunk instance that forwards data to another Splunk instance
+    
+
+Indexers:
+    |--> transforms the raw data into events and stores the events into an index, also searches the indexed data in response to search requests
+
+
+Search Head:
+    |--> distributed search environment, directs search requests to a set of search peers and merges the results back to the user
+    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                                                                               SPLUNK QUERY LANGUAGE:
+                                                                                                               
+head/tail- Returns the first/last N results.                                                                                                        
+
+search- Filters results to those that match the search expression.
+
+sort- Sorts the search results by the specified fields.
+
+stats- Provides statistics, grouped optionally by fields.  See COMMON STATS FUNCTIONS.
+
+where- Filters search results using eval expressions. Used to  compare two different fields.
+
+
+strftime(X,Y)
+    |--> Returns epochtime value X rendered using the format specified by Y.
+    EXAMPLE-- strftime(_time, "%H:%M")
+
+    TIME:
+        |--> %H (24 hour (leading zeros) (00 to 23))
+              %I 12 hour (leading zeros) (01 to 12)
+              %M Minute (00 to 59)
+              %S Second (00 to 61)
+              %N subseconds with width (%3N = millisecs, %6N = microsecs, %9N = nanosecs)    REALLY NOT NESSESARY BUT I PUT IT ON HERE ANYWAY
+              %p AM or PM
+              %Z Time zone (EST)    AGAIN THIS SHIT ISNT NESSESARY
+              %z Time zone offset from UTC, in hour and minute: +hhmm or -hhmm. (-0500 for EST) THIS SHIT ALSO ISNT NESSEARY EITHER 
+              %s Seconds since 1/1/1970 (1308677092)
+
+
+
+    DAYS:
+        |--> %d Day of month (leading zeros) (01 to 31)
+              %j Day of year (001 to 366)
+              %w Weekday (0 to 6)
+              %a Abbreviated weekday (Sun)
+              %A Weekday (Sunday)
+
+    MONTHS:
+        |--> %b Abbreviated month name (Jan)
+              %B Month name (January)
+              %m Month number (01 to 12)
+
+    YEARS:
+        |--> %y Year without century (00 to 99)
+             %Y Year (2021)
+        
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
