@@ -42,15 +42,38 @@ Reports:
 SYSTEM COMPONENTS:
 
 forwarders:
-    |--> Splunk instance that forwards data to another Splunk instance
-    
+    |--> Splunk instance that forwards data to another Splunk instance. Two main types within splunk
+            Universal (UF):   minimal-footprint agent designed to forward raw data efficiently. 
+            Heavy (HF):    more advanced forwarder that can filter, transform, and route data before sending it.
 
+                1. Data Collection: Forwarder gathers logs, metrics, or events from various sources like servers, applications, or network devices.
+                2. Preprocessing: It can tag metadata (source, sourcetype, host), compress data, and buffer it before transmission.
+                3. Secure Transmission: Data is sent securely via SSL encryption to a Splunk indexer or another forwarder.
+                4. Indexing & Search: The indexer processes the data, making it searchable for analysis and visualization.
+
+        # Highly scalable and resource-efficient, making them ideal for large deployments
+    
 Indexers:
     |--> transforms the raw data into events and stores the events into an index, also searches the indexed data in response to search requests
 
+                1. Data Ingestion: The indexer receives raw data from forwarders or other sources
+                2. Parsing & Event Processing: It breaks the data into events based on timestamps and applies metadata (host, source, sourcetype).
+                3. Indexing Pipeline: Events are segmented for fast searching and stored in indexes.
+                4. Storage & Compression: The indexer writes raw data and index files to disk, applying compression for efficiency.
+                5. Search & Retrieval: When a user runs a search, the indexer quickly retrieves relevant events using optimized indexing structures.
+
+        # Can be clustered for redundancy and scalability, ensuring high availability and data replication
 
 Search Head:
     |--> distributed search environment, directs search requests to a set of search peers and merges the results back to the user
+
+                1. Search Distribution: The search head sends queries to multiple indexers, which process the data and return results.
+                2. Parallel Processing: Indexers work simultaneously, speeding up searches.
+                3. Search Head Clustering: Multiple search heads can be grouped together to share configurations and load balance searches
+                4. Search Artifacts & Replication: Search heads store search results, dashboards, and reports, ensuring consistency across the cluster
+                5. User Interface: The search head provides a web-based UI for users to interact with Splunk and visualize data.
+
+        # Crucial for large-scale Splunk deployments, ensuring efficient data retrieval and analysis
     
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
