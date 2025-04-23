@@ -1,0 +1,70 @@
+THREAT HUNTING:
+    |--> PERACTIONARY, used to search for an adversary/ malicious actor before they have the chance to fire for effect within the network
+
+
+PRE-HUNTING:
+
+Define objectives:
+              |--> what are the goals of the hunt
+                    identify the priorites, learn them and how they can be affected
+
+UNDERSTAND THE ENVIRONMENT:
+    |--> gather and vailidate network information
+          establish a baseline of the network
+
+IDENTIFY REQUIRED DATA SOURCES:
+    |--> gather logs/data based on TTP (TACTIC, TECHNIQES, PROCEDURES) 
+          Host-based: Win EventLogs, Sysmon, EDR telemetery
+          Net-based: Zeek, PCAPs, flow data
+          OSR: virustotal, threat intel platforms
+
+TOOLING SETUP:
+    |--> Host Analysis: Hayabusa, Chainsaw, Timesketch, Multi-user Autopsy 
+          Threat Detection: YARA, Zeeks (intel.dat)
+          Case Managment:  Notetaking systems, internal ticketing/case tracking tools
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
