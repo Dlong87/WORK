@@ -1,0 +1,1 @@
+Formatting the Timestamp: | eval formatted_time=strftime(_time, "%Y-%m-%d%H:%M:%S") eval command here creates a new field namedformatted_time by converting the default _time field into a custom, human-readable format. This evaluation should typically be placed immediately after your data retrieval so that the new field is available for any subsequent processing.
