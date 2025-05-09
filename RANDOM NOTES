@@ -1,1 +1,7 @@
-Formatting the Timestamp: | eval formatted_time=strftime(_time, "%Y-%m-%d%H:%M:%S") eval command here creates a new field namedformatted_time by converting the default _time field into a custom, human-readable format. This evaluation should typically be placed immediately after your data retrieval so that the new field is available for any subsequent processing.
+Establishing a baseline from a pre existing network
+    |--> learn tools that are native to that network already
+          said tools will give great insight into what regualr net traffic looks like. 
+          monitor the net within hour intervals (help monitor net activity through out the day) for better acceracy 
+
+identify ky metrics: 
+    |--> net traffic: identify typical 
