@@ -120,8 +120,28 @@ strftime(X,Y)
     YEARS:
         |--> %y Year without century (00 to 99)
              %Y Year (2021)
-        
 
+-----------------------------------------------------------------------
+
+Threat intel:
+        |--> understanding how process of correlating threat intel with internal logs and alerts
+
+            Threat p[latforms:
+            cisco  talos
+            cyber security news
+            bleeping computer
+            cisa blog
+            black hills information sec 
+            the hacker news
+
+
+host based tools:
+     |--> Splunk – Often used for security information and event management (SIEM), including host-based monitoring.
+            Sysmon – A Windows system monitoring tool that logs process activity
+
+Net based tool:
+        |--> palo alto - network firewall 
+            Zeek (formerly Bro) – A network traffic analyzer for security monitoring.
     
 
 
